@@ -1,5 +1,5 @@
 {
-	"name": "barcodeReader",
+	"name": "ScannerScene",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -9,7 +9,7 @@
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.3",
-		"react-native-camera": "git@github.com:sahir/react-native-camera.git#barcode-finder"			
+		"react-native-camera": "git@github.com:sahir/react-native-camera.git#barcode-finder"
 	},
 	"devDependencies": {
 		"babel-jest": "21.0.2",
