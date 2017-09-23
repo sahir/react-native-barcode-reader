@@ -24,15 +24,12 @@ export default class ScannerScene extends React.Component {
 		console.warn('onBarCodeRead');
 		const code = scanResult.data;
 		if (Utility.isValidBarcode(code)) {
-			this.componentWillUnmount();
-			setTimeout(() => {
-				this.componentWillMount();
-			}, 3000);
-			console.warn('valid');
+      console.warn('valid');
+      console.warn(code);
 		} else {
 			Alert.alert('error', 'invalid Barcode', [
 				{
-					text: 'rescanButtonLabel',
+					text: 'rescan barcode',
 				}
 			]);
 		}
