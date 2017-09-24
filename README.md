@@ -4,7 +4,7 @@ A simple Barcode Reader Screen implemented with [react-native-camera](https://gi
 
 # barcode-reader
 
-![barcode-reader](https://github.com/sahir/react-native-barcode-reader/blob/master/screenshots/Screenshot_2017-09-21-02-22-39.png)
+![barcode-reader](https://github.com/sahir/react-native-barcode-reader/blob/master/screenshots/barcode-reader.jpeg)
 
 ## Usage
 
