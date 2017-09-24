@@ -119,4 +119,4 @@ export default class ScannerScene extends React.Component {
 	}
 }
 
-AppRegistry.registerComponent('ScannerScene', () => ScannerScene)
+AppRegistry.registerComponent('barcode-reader', () => ScannerScene)

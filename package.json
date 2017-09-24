@@ -1,5 +1,5 @@
 {
-	"name": "ScannerScene",
+	"name": "barcode-reader",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
