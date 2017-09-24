@@ -12,7 +12,7 @@ A simple Barcode Reader Screen implemented with [react-native-camera](https://gi
 
 `npm install --save barcode-reader`
 
-**Link native libraries of `react-native-barcodescanner` and `react-native-camera`**
+**Link native librarie `react-native-camera`**
 
 ```
 which rnpm || npm install -g rnpm
