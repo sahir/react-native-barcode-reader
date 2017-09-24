@@ -61,12 +61,12 @@ export default class ScannerScene extends React.Component {
 				/>
 				<View style={[styles.overlay, styles.topOverlay]}>
 					<Text style={styles.scanScreenMessage}>
-						Please scan the barcode at the bottom of your receipt.
+						    Please scan the barcode.
 					</Text>
 				</View>
 				<View style={[styles.overlay, styles.bottomOverlay]}>
 					<Button style={styles.enterBarcodeManualButton}
-            title='Enter Barcode Manually'>
+            title='Enter Barcode'>
 					</Button>
 				</View>
 			</View>
@@ -112,7 +112,8 @@ export default class ScannerScene extends React.Component {
 				fontSize: 14,
 				color: 'white',
 				textAlign: 'center',
-				alignItems: 'center'
+				alignItems: 'center',
+        justifyContent: 'center'
 			}
 		};
 	}
