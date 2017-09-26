@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import { Image, StatusBar, StyleSheet, TouchableOpacity, View, AppRegistry, Text, Button } from 'react-native';
+import { View, AppRegistry, Text, Button } from 'react-native';
 import Camera from 'react-native-camera';
-import Utility from './Utility';
 
 export default class ScannerScene extends Component {
 	constructor(props) {
 		super(props);
 		this.camera = null;
-
-		this.state ={
-			_codes: [],
-			isBarcodeRead: false
-		}
+		this.barcodeCodes = [];
 
 		this.state = {
-    	camera: {
+			camera: {
 				aspect: Camera.constants.Aspect.fill,
 				captureTarget: Camera.constants.CaptureTarget.cameraRoll,
 				type: Camera.constants.Type.back,
@@ -25,14 +20,14 @@ export default class ScannerScene extends Component {
 		};
 	}
 
-  onBarCodeRead(scanResult) {
+	onBarCodeRead(scanResult) {
 		console.warn(scanResult.type);
 		console.warn(scanResult.data);
-		if(scanResult.data != null) {
-				if(!this._codes.includes(code)) {
-						this._codes.push(code);
-						console.warn('onBarCodeRead call');
-				}
+		if (scanResult.data != null) {
+			if (!this.barcodeCodes.includes(scanResult.data)) {
+				this.barcodeCodes.push(scanResult.data);
+				console.warn('onBarCodeRead call');
+			}
 		}
 		return;
 	}
