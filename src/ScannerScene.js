@@ -1,13 +1,13 @@
-import React from 'react';
-import { Image, StatusBar, StyleSheet, TouchableOpacity, View, AppRegistry, Text, Button } from 'react-native';
+import React, { Component } from 'react';
+import { View, AppRegistry, Text, Button } from 'react-native';
 import Camera from 'react-native-camera';
-import Utility from './Utility';
 
-
-export default class ScannerScene extends React.Component {
-  constructor(props) {
+export default class ScannerScene extends Component {
+	constructor(props) {
 		super(props);
 		this.camera = null;
+		this.barcodeCodes = [];
+
 		this.state = {
 			camera: {
 				aspect: Camera.constants.Aspect.fill,
@@ -21,18 +21,15 @@ export default class ScannerScene extends React.Component {
 	}
 
 	onBarCodeRead(scanResult) {
-		console.warn('onBarCodeRead');
-		const code = scanResult.data;
-		if (Utility.isValidBarcode(code)) {
-      console.warn('valid');
-      console.warn(code);
-		} else {
-			Alert.alert('error', 'invalid Barcode', [
-				{
-					text: 'rescan barcode',
-				}
-			]);
+		console.warn(scanResult.type);
+		console.warn(scanResult.data);
+		if (scanResult.data != null) {
+			if (!this.barcodeCodes.includes(scanResult.data)) {
+				this.barcodeCodes.push(scanResult.data);
+				console.warn('onBarCodeRead call');
+			}
 		}
+		return;
 	}
 
 	render() {
@@ -60,14 +57,10 @@ export default class ScannerScene extends React.Component {
 					onBarCodeRead={this.onBarCodeRead.bind(this)}
 				/>
 				<View style={[styles.overlay, styles.topOverlay]}>
-					<Text style={styles.scanScreenMessage}>
-						    Please scan the barcode.
-					</Text>
+					<Text style={styles.scanScreenMessage}>Please scan the barcode.</Text>
 				</View>
 				<View style={[styles.overlay, styles.bottomOverlay]}>
-					<Button style={styles.enterBarcodeManualButton}
-            title='Enter Barcode'>
-					</Button>
+					<Button style={styles.enterBarcodeManualButton} title="Enter Barcode" />
 				</View>
 			</View>
 		);
@@ -113,10 +106,10 @@ export default class ScannerScene extends React.Component {
 				color: 'white',
 				textAlign: 'center',
 				alignItems: 'center',
-        justifyContent: 'center'
+				justifyContent: 'center'
 			}
 		};
 	}
 }
 
-AppRegistry.registerComponent('barcode-reader', () => ScannerScene)
+AppRegistry.registerComponent('barcode-reader', () => ScannerScene);
