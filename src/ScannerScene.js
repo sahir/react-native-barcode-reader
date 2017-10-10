@@ -29,7 +29,7 @@ export default class ScannerScene extends Component {
 				console.warn('onBarCodeRead call');
 			}
 		}
-		return;
+		//return;
 	}
 
 	render() {
@@ -112,4 +112,4 @@ export default class ScannerScene extends Component {
 	}
 }
 
-AppRegistry.registerComponent('barcode-reader', () => ScannerScene);
+AppRegistry.registerComponent('react-native-barcode-reader', () => ScannerScene);
