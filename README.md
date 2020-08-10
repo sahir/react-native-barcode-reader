@@ -8,6 +8,10 @@ https://github.com/sahir/react-native-camera/tree/barcode-finder
 
 ![barcode-reader](https://github.com/sahir/react-native-barcode-reader/blob/master/screenshots/barcode-reader.jpeg)
 
+## npm publish
+
+https://www.npmjs.com/package/rn-barcode-reader
+
 ## Install
 
 **Install library**
